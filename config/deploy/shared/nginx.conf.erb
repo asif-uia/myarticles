@@ -1,0 +1,27 @@
+upstream puma_<%=fetch(:stage)%> {
+server 127.0.0.1:3000;
+}
+
+server {
+listen 80;
+server_name host.hostname;
+
+root /home/deployer/myarticles/current/public;
+
+location / {
+try_files $uri @rails;
+}
+
+location @puma_<%= fetch(:stage) %> {
+proxy_set_header Host $host;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header X-Forwarded-Proto $scheme;
+proxy_pass http://puma_<%= fetch(:stage)%>;
+proxy_buffering on;
+}
+
+error_page 500 502 503 504 /500.html;
+client_max_body_size 4G;
+keepalive_timeout 10;
+}

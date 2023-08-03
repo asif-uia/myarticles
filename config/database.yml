@@ -23,6 +23,10 @@ test:
     <<: *default
     database: myarticles
 
+staging:
+    <<: *default
+    database: myarticles
+
 production:
     <<: *default
     database: myarticles
