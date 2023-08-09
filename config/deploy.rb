@@ -51,13 +51,3 @@ set(
 
 # Default value for keep_releases is 5
 set :keep_releases, 5
-
-namespace :deploy do
-  # 'deploy:setup_config'
-  after :finishing, 'deploy:cleanup'
-  before 'deploy:setup_config', 'nginx:remove_default_vhost'
-  after 'deploy:setup_config', 'nginx:reload'
-
-  after 'deploy:log_revision', 'remote:restart'
-
-end
