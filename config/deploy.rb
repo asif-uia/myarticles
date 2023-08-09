@@ -13,7 +13,7 @@ set :tmp_dir, "/home/#{fetch(:deploy_user)}/tmp"
 set :pty, true
 
 set :rbenv_type, :system
-set :rbenv_ruby, '2.7.0'
+set :rbenv_ruby, '2.6.7'
 # set :rbenv_custom_path, "/home/#{fetch(:deploy_user)}/.rbenv"
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_custom_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w[bundle gem rails ruby rake]
