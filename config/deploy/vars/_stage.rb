@@ -4,7 +4,7 @@ set :branch, :staging
 set :server_port, 80
 
 set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
-set :rails_env, :stage
+set :rails_env, :staging
 
 set :deploy_to, "/home/#{fetch(:deploy_user)}/#{fetch(:full_app_name)}"
 
