@@ -1,4 +1,4 @@
-sdefault: &default
+default: &default
     adapter: postgresql
     encoding: unicode
     username: admin
