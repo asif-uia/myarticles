@@ -8,4 +8,4 @@
 # server "db.example.com", user: "deploy", roles: %w{db}
 require_relative 'vars/_stage'
 
-  server "10.0.0.139", user: fetch(:deploy_user), roles: %w{app db}
+server "10.0.0.171", user: fetch(:deploy_user), roles: %w{app db}
