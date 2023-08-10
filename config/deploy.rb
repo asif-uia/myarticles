@@ -18,6 +18,8 @@ set :rbenv_ruby, '2.7.0'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_custom_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w[bundle gem rails ruby rake]
 
+append :rbenv_map_bins, 'puma', 'pumactl'
+
 # Default value for :linked_files is []
 append :linked_files, "config/application.yml", "config/database.yml", 'config/master.key'
 
