@@ -20,6 +20,8 @@ set :puma_threads, [1, 2]
 set :puma_role, :app
 set :puma_env, :staging
 set :puma_preload_app, true
+
+set :puma_enable_socket_service, true
 set :puma_access_log, "#{shared_path}/log/puma_access.log"
 set :puma_error_log, "#{shared_path}/log/puma_error.log"
 
