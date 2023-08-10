@@ -35,7 +35,7 @@ set :server_port, 80
 
 set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
 
-set :lb_ip, '172.18.0.0/16'
+set :deploy_path, "/app"
 
 set :deploy_to, "#{fetch(:deploy_path)}/#{fetch(:full_app_name)}"
 
