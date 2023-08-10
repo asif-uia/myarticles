@@ -15,7 +15,8 @@ set :puma_rackup, -> { File.join(current_path, 'config.ru')}
 set :puma_bind, "unix://#{shared_path}/tmp/sockets/puma.#{fetch(:full_app_name)}.sock"
 set :puma_default_control_app, "unix://#{shared_path}/tmp/sockets/pumactl.#{fetch(:full_app_name)}.sock"
 set :puma_conf, "#{shared_path}/config/puma.rb"
-set :puma_threads, [4, 16]
+set :puma_workers, 2
+set :puma_threads, [1, 2]
 set :puma_role, :app
 set :puma_env, :staging
 set :puma_preload_app, true
