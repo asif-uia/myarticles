@@ -1,4 +1,4 @@
-# config valid for current version and patch releases of Capistrano
+  # config valid for current version and patch releases of Capistrano
 lock "~> 3.17.1"
 
 set :application, "myarticles"
@@ -6,7 +6,7 @@ set :repo_url, 'git@github.com:asif-uia/myarticles.git'
 set :deploy_user, :deployer
 
 
-set :tmp_dir, "/home/#{fetch(:deploy_user)}/tmp"
+set :tmp_dir, "/app/#{fetch(:deploy_user)}/tmp"
 
 
 # Default value for :pty is false

@@ -17,21 +17,13 @@ activate_control_app '<%= fetch(:puma_default_control_app) %>'
 
 workers '<%= fetch(:puma_workers) %>'
 
-  <% if fetch(:puma_preload_app) %>
 preload_app!
-  <% end %>
-
-on_restart do
-  puts 'Refreshing Gemfile'
-  ENV['BUNDLE_GEMFILE'] = '<%= fetch(:bundle_gemfile, "#{current_path}/Gemfile") %>'
-end
-
-before_fork do
-  ActiveRecord::Base.connection_pool.disconnect!
-end
 
 on_worker_boot do
   ActiveSupport.on_load(:active_record) do
     ActiveRecord::Base.establish_connection
   end
 end
+
+# Allow puma to be restarted by `rails restart` command.
+plugin :tmp_restart
