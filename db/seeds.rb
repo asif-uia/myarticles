@@ -1,5 +1,5 @@
 # 5 rows.
-5.times do
+50.times do
 	Article.create({
 		title: Faker::Book.title,
 		body: Faker:: Lorem.sentence

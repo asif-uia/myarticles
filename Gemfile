@@ -15,6 +15,9 @@ gem 'puma', '~> 4.3', '>= 4.3.1'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootstrap', '~> 4.1.3'
 
+# To seed some fake data into the database
+gem 'faker'
+
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
