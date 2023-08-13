@@ -3,7 +3,7 @@ upstream puma_<%=fetch(:stage)%> {
 }
 
 server {
-  server_name 192.168.1.30;
+  server_name 10.0.0.135;
   listen 80;
 
   root <%= fetch(:deploy_to) %>/current/public;

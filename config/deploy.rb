@@ -1,4 +1,4 @@
-  # config valid for current version and patch releases of Capistrano
+# config valid for current version and patch releases of Capistrano
 lock "~> 3.17.1"
 
 set :application, "myarticles"
@@ -6,7 +6,7 @@ set :repo_url, 'git@github.com:asif-uia/myarticles.git'
 set :deploy_user, :deployer
 
 
-set :tmp_dir, "/app/#{fetch(:deploy_user)}/tmp"
+set :tmp_dir, "/home/#{fetch(:deploy_user)}/tmp"
 
 
 # Default value for :pty is false
@@ -15,10 +15,8 @@ set :pty, true
 set :rbenv_type, :system
 set :rbenv_ruby, '2.7.0'
 # set :rbenv_custom_path, "/home/#{fetch(:deploy_user)}/.rbenv"
-set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_custom_path)}/bin/rbenv exec"
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} /bin/rbenv exec"
 set :rbenv_map_bins, %w[bundle gem rails ruby rake]
-
-append :rbenv_map_bins, 'puma', 'pumactl'
 
 # Default value for :linked_files is []
 append :linked_files, "config/application.yml", "config/database.yml", 'config/master.key'

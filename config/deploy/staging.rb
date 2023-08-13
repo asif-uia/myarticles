@@ -9,4 +9,4 @@
 require_relative 'vars/_stage'
 
 # server "10.0.0.171", user: fetch(:deploy_user), roles: %w{app db}
-server "192.168.1.20", user: fetch(:deploy_user), roles: %w{app db}
+server "10.0.0.135", user: fetch(:deploy_user), roles: %w{app db}
